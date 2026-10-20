@@ -1,0 +1,382 @@
+@import "tailwindcss";
+
+/*
+  Asher Print design tokens.
+  The BizCraft zip defines no CSS custom properties, so these variables hold
+  the zip literal values verbatim. Sources are listed in AUDIT.md.
+  Active preset in the zip HTML is preset3.css, primary #ee3b24.
+*/
+:root {
+  --color-primary: #ee3b24;
+  --color-primary-hover: #327cbc;
+  --color-heading: #323232;
+  --color-body: #6a6a6a;
+  --color-muted: #959595;
+  --color-page: #ffffff;
+  --color-hairline: #e7e7e7;
+  --color-section: #f5f5f5;
+  --color-image-block: #f4f4f4;
+  --color-footer: #2e2e2e;
+  --color-copyright: #191919;
+  --color-whatsapp: #25d366;
+  --font-display: "JaapokkiRegular", "Lato", sans-serif;
+  --font-body: "Lato", sans-serif;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-heading: var(--color-heading);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-hairline: var(--color-hairline);
+  --color-section: var(--color-section);
+  --color-image-block: var(--color-image-block);
+  --color-footer: var(--color-footer);
+  --color-copyright: var(--color-copyright);
+  --color-whatsapp: var(--color-whatsapp);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6em;
+  color: var(--color-body);
+  background: var(--color-page);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-heading);
+}
+
+h1 { font-size: 36px; line-height: 48px; }
+h2 { font-size: 32px; line-height: 40px; font-weight: 400; }
+h3 { font-size: 24px; line-height: 32px; font-weight: 400; }
+h4 { font-size: 18px; line-height: 28px; }
+h5 { font-size: 14px; line-height: 24px; }
+
+section { padding: 80px 0; position: relative; }
+
+a:link,
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; color: #000; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Zip button: .btn.btn-primary (style.css) with preset3 border and fill */
+.btn-primary-zip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-heading);
+  border: 2px solid var(--color-primary);
+  border-radius: 50px;
+  padding: 10px 30px;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.btn-primary-zip:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-primary-zip.solid {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-primary-zip.solid:hover {
+  background: none;
+  color: var(--color-heading);
+}
+.btn-primary-zip.white {
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-primary-zip.white:hover {
+  border: 2px solid transparent;
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-primary-zip:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Zip heading block: .heading, .title-icon, .title, .title-desc */
+.heading-zip {
+  padding-bottom: 50px;
+  margin-top: 10px;
+  transition: all 0.3s ease 0s;
+}
+.title-icon-zip {
+  font-size: 32px;
+  margin-right: 15px;
+  margin-top: 9px;
+  color: var(--color-muted);
+  flex: none;
+  transition: all 0.3s ease 0s;
+}
+.heading-zip:hover .title-icon-zip { color: var(--color-primary); }
+.title-zip {
+  position: relative;
+  margin: 0;
+  line-height: 32px;
+  border-left: 2px solid var(--color-hairline);
+  display: inline-block;
+  padding-left: 15px;
+  transition: all 0.3s ease 0s;
+}
+.title-desc-zip {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--color-body);
+  margin-top: 10px;
+  max-width: 720px;
+}
+
+/* Zip skewed section edge: .angle:before */
+.angle-zip { position: relative; }
+.angle-zip::before {
+  background: #fff;
+  content: "";
+  height: 75px;
+  top: -37px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  transform: skew(0deg, 2deg);
+  pointer-events: none;
+}
+.angle-zip-grey::before { background: var(--color-section); }
+.angle-zip-dark::before {
+  background: var(--color-copyright);
+  height: 50px;
+  top: -25px;
+  transform: skew(0deg, -2deg);
+}
+
+/* Zip pentagon icon badge: .icon-pentagon */
+.icon-pentagon-zip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 26px;
+  background: none repeat scroll 0 0 var(--color-primary);
+  color: #fff;
+}
+.icon-pentagon-zip::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 10px solid var(--color-primary);
+}
+.icon-pentagon-zip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 10px solid var(--color-primary);
+}
+
+/* Zip service icon: .service-icon */
+.service-icon-zip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 48px;
+  background: none repeat scroll 0 0 var(--color-primary);
+  color: #fff;
+}
+.service-icon-zip::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -30px;
+  width: 0;
+  height: 0;
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  border-bottom: 30px solid var(--color-primary);
+}
+.service-icon-zip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 0;
+  height: 0;
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  border-top: 30px solid var(--color-primary);
+}
+
+/* Zip header (preset3): 5px primary top border, primary logo block */
+.header-zip { border-top: 5px solid var(--color-primary); background: #fff; }
+.navbar-brand-zip {
+  background: var(--color-primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+}
+.navbar-brand-zip:hover { color: #fff; }
+
+/* Zip footer and copyright */
+.footer-zip {
+  padding: 60px 0 100px;
+  background: var(--color-footer) url(/images/template/footer-bg.jpg) no-repeat center 0;
+  background-size: cover;
+  color: #fff;
+  font-size: 14px;
+}
+.footer-zip .widget-title { color: #fff; }
+.copyright-zip { background: var(--color-copyright); color: #fff; padding: 60px 0 40px; }
+.copyright-info-zip {
+  font-size: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 850px;
+  margin: 30px auto 0;
+  padding-top: 15px;
+}
+
+/* Zip form focus (preset3): .form-control:focus */
+.input-zip {
+  width: 100%;
+  border: 1px solid #dedede;
+  border-radius: 0;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--color-heading);
+  background: #fff;
+  transition: border-color 0.3s ease 0s;
+}
+.input-zip:focus {
+  border: 1px solid var(--color-primary);
+  outline: none;
+}
+
+/* Hero product marquee, CSS scroll (animation 5) */
+@keyframes hero-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: hero-marquee 36s linear infinite;
+}
+.hero-marquee-track:hover { animation-play-state: paused; }
+
+/* WhatsApp entrance pulse (animation 8) */
+@keyframes whatsapp-entrance {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  80% { transform: scale(0.94); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes whatsapp-ring {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.whatsapp-entrance {
+  animation: whatsapp-entrance 0.7s ease 0.4s both, whatsapp-ring 2.4s ease 1.4s infinite;
+}
+
+/* Voice tour pulsing ring while speaking */
+@keyframes voice-ring {
+  0% { box-shadow: 0 0 0 0 rgba(238, 59, 36, 0.45); }
+  70% { box-shadow: 0 0 0 16px rgba(238, 59, 36, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(238, 59, 36, 0); }
+}
+.voice-speaking { animation: voice-ring 1.6s ease infinite; }
+
+/* Loading screen printer sheet */
+@keyframes printer-sheet {
+  0% { transform: translateY(-14px); opacity: 0; }
+  25% { opacity: 1; }
+  70% { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(16px); opacity: 0; }
+}
+.printer-sheet { animation: printer-sheet 1.5s ease-in-out infinite; }
+
+/* Upload progress bar (animation 9): width set inline, CSS transition */
+.upload-progress-bar { transition: width 0.35s ease; }
+
+/* Tooltip for fixed round buttons */
+.fixed-tooltip {
+  position: absolute;
+  bottom: 68px;
+  white-space: nowrap;
+  background: var(--color-heading);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.group:hover .fixed-tooltip,
+.group:focus-visible .fixed-tooltip { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee-track,
+  .whatsapp-entrance,
+  .voice-speaking,
+  .printer-sheet {
+    animation: none;
+  }
+  html { scroll-behavior: auto; }
+}

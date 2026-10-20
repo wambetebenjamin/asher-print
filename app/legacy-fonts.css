@@ -1,0 +1,58 @@
+/*
+  @font-face rules reproduced verbatim from bizcraft-master.zip.
+  Only the URL base changes from ../fonts/ to the Next.js public path /fonts/.
+  Family names, weights and styles are unchanged. See AUDIT.md.
+*/
+
+/* css/style.css lines 39 to 48 */
+@font-face {
+  font-family: 'JaapokkiRegular';
+  src: url('/fonts/jaapokki/jaapokki-regular.eot');
+  src: url('/fonts/jaapokki/jaapokki-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/jaapokki/jaapokki-regular.woff') format('woff'),
+    url('/fonts/jaapokki/jaapokki-regular.ttf') format('truetype'),
+    url('/fonts/jaapokki/jaapokki-regular.svg#JaapokkiRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* css/font-awesome.css lines 7 to 13 */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  css/bootstrap.min.css, Glyphicons Halflings.
+  The zip src URLs end in .html (a scraping artefact) and only the woff and
+  svg font files exist in the zip, so this points at the two real files.
+*/
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  css/flexslider.css lines 26 to 35.
+  No flexslider-icon font files exist in the zip. Reproduced for the record.
+*/
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('/fonts/flexslider-icon.eot');
+  src: url('/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/flexslider-icon.woff') format('woff'),
+    url('/fonts/flexslider-icon.ttf') format('truetype'),
+    url('/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
